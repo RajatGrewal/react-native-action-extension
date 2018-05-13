@@ -13,12 +13,10 @@
 
 @interface ActionViewController ()
 
-@property(strong,nonatomic) IBOutlet UIImageView *imageView;
-
 @end
 
 @implementation ActionViewController
-  ActionViewController * actionViewController = nil;
+ActionViewController * actionViewController = nil;
 
 - (void)loadView {
   NSDictionary *initialProps = [NSDictionary dictionaryWithObject:[NSNumber numberWithBool: TRUE] forKey:@"isActionExtension"];
@@ -35,14 +33,15 @@
 }
 
 - (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+  [super didReceiveMemoryWarning];
+  // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)done {
-    // Return any edited content to the host app.
-    // This template doesn't do anything, so we just echo the passed in items.
-    [self.extensionContext completeRequestReturningItems:self.extensionContext.inputItems completionHandler:nil];
+- (void)done {
+  // Return any edited content to the host app.
+  // This template doesn't do anything, so we just echo the passed in items.
+  [self.extensionContext completeRequestReturningItems:self.extensionContext.inputItems completionHandler:nil];
+  actionViewController = nil;
 }
 
 @end

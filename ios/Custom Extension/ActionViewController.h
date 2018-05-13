@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface ActionViewController : UIViewController
-  extern ActionViewController * actionViewController;
+extern ActionViewController * actionViewController;
+- (void)done;
 @end

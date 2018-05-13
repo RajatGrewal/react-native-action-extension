@@ -38,6 +38,9 @@
 		5E9157361DD0AC6A00FF2AA8 /* libRCTAnimation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E9157331DD0AC6500FF2AA8 /* libRCTAnimation.a */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
 		ADBDB9381DFEBF1600ED6528 /* libRCTBlob.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ADBDB9271DFEBF0700ED6528 /* libRCTBlob.a */; };
+		B587E82D20A8688600AEB522 /* ActionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5F9386B20A736E4005DABAD /* ActionViewController.m */; };
+		B587E83120A869D800AEB522 /* RCTActionExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = B587E83020A869D800AEB522 /* RCTActionExtension.m */; };
+		B587E83220A869D800AEB522 /* RCTActionExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = B587E83020A869D800AEB522 /* RCTActionExtension.m */; };
 		B5F9386C20A736E4005DABAD /* ActionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5F9386B20A736E4005DABAD /* ActionViewController.m */; };
 		B5F9386F20A736E4005DABAD /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5F9386D20A736E4005DABAD /* MainInterface.storyboard */; };
 		B5F9387320A736E4005DABAD /* Custom Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = B5F9386820A736E4005DABAD /* Custom Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -387,6 +390,8 @@
 		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "../node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
 		ADBDB91F1DFEBF0600ED6528 /* RCTBlob.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTBlob.xcodeproj; path = "../node_modules/react-native/Libraries/Blob/RCTBlob.xcodeproj"; sourceTree = "<group>"; };
+		B587E82F20A869D800AEB522 /* RCTActionExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RCTActionExtension.h; sourceTree = "<group>"; };
+		B587E83020A869D800AEB522 /* RCTActionExtension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RCTActionExtension.m; sourceTree = "<group>"; };
 		B5F9386820A736E4005DABAD /* Custom Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Custom Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5F9386A20A736E4005DABAD /* ActionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ActionViewController.h; sourceTree = "<group>"; };
 		B5F9386B20A736E4005DABAD /* ActionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ActionViewController.m; sourceTree = "<group>"; };
@@ -558,6 +563,7 @@
 		13B07FAE1A68108700A75B9A /* RNActionExtension */ = {
 			isa = PBXGroup;
 			children = (
+				B587E82E20A869BD00AEB522 /* NativeBridges */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
@@ -682,17 +688,18 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		B587E79020A841B300AEB522 /* NativeBridge */ = {
+		B587E82E20A869BD00AEB522 /* NativeBridges */ = {
 			isa = PBXGroup;
 			children = (
+				B587E82F20A869D800AEB522 /* RCTActionExtension.h */,
+				B587E83020A869D800AEB522 /* RCTActionExtension.m */,
 			);
-			path = NativeBridge;
+			name = NativeBridges;
 			sourceTree = "<group>";
 		};
 		B5F9386920A736E4005DABAD /* Custom Extension */ = {
 			isa = PBXGroup;
 			children = (
-				B587E79020A841B300AEB522 /* NativeBridge */,
 				B5F9386A20A736E4005DABAD /* ActionViewController.h */,
 				B5F9386B20A736E4005DABAD /* ActionViewController.m */,
 				B5F9386D20A736E4005DABAD /* MainInterface.storyboard */,
@@ -1248,8 +1255,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B587E82D20A8688600AEB522 /* ActionViewController.m in Sources */,
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
+				B587E83120A869D800AEB522 /* RCTActionExtension.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1275,6 +1284,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B5F9386C20A736E4005DABAD /* ActionViewController.m in Sources */,
+				B587E83220A869D800AEB522 /* RCTActionExtension.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
