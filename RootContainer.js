@@ -7,6 +7,8 @@ import {
   NativeModules
 } from 'react-native';
 
+
+//sample instruction for the action extension
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' +
     'Cmd+D or shake for dev menu',
