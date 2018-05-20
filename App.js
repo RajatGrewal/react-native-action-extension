@@ -1,3 +1,5 @@
+//React-native template
+
 import React, { Component } from 'react';
 import {
   Platform,
