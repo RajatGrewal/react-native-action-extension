@@ -16,3 +16,6 @@ A helper module to implement custom iOS action extension in React-Native
 
 ## :no_entry_sign: OS Compatibility
 Only supports iOS for now
+
+## Author
+Rajat Grewal
